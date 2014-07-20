@@ -1,0 +1,5 @@
+services:
+    tatiana5.favicon.listener:
+        class: tatiana5\favicon\event\listener
+        tags:
+            - { name: event.listener }
