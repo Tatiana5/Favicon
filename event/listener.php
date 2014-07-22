@@ -16,6 +16,24 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 */
 class listener implements EventSubscriberInterface
 {
+	
+	/** @var \phpbb\config\config */
+	protected $config;
+	
+	/** @var \phpbb\template\template */
+	protected $template;
+
+	/**
+	* Constructor
+	* 
+	* @param \phpbb\config\config $config
+	* @param \phpbb\template\template $template
+	*/
+	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template)
+	{
+		$this->config = $config;
+		$this->template = $template;
+	}
 	/**
 	* Assign functions defined in this class to event listeners in the core
 	*
@@ -25,6 +43,15 @@ class listener implements EventSubscriberInterface
 	*/
 	static public function getSubscribedEvents()
 	{
-		return array();
+		return array(
+			'core.page_header_after'	=> 'favicon',
+		);
+	}
+	
+	public function favicon() 
+	{
+		$this->template->assign_vars(array(
+			'FAVICON_EXT'	=> $this->config['favicon_ext'],
+		));
 	}
 }
