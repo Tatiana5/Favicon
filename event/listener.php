@@ -52,6 +52,7 @@ class listener implements EventSubscriberInterface
 	{
 		$this->template->assign_vars(array(
 			'FAVICON_EXT'	=> $this->config['favicon_ext'],
+			'FAVICON_APPLE'	=> $this->config['favicon_apple'],
 		));
 	}
 }

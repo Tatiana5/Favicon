@@ -32,6 +32,7 @@ class favicon_module
 			'vars'	=> array(
 				'legend1'		=> '',
 				'favicon_ext'		=> array('lang' => 'ACP_FAVICON_EXT', 'validate' => 'string', 'type' => 'select', 'method' => 'favicon_select', 'explain' => true),
+				'favicon_apple'		=> array('lang' => 'ACP_FAVICON_APPLE', 'validate' => 'bool', 'type' => 'radio:yes_no', 'method' => false, 'explain' => true),
 				
 				'legend2'					=> 'ACP_SUBMIT_CHANGES',
 			),
