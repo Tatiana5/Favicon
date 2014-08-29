@@ -16,10 +16,10 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 */
 class listener implements EventSubscriberInterface
 {
-	
+
 	/** @var \phpbb\config\config */
 	protected $config;
-	
+
 	/** @var \phpbb\template\template */
 	protected $template;
 
@@ -47,8 +47,8 @@ class listener implements EventSubscriberInterface
 			'core.page_header_after'	=> 'favicon',
 		);
 	}
-	
-	public function favicon() 
+
+	public function favicon()
 	{
 		$this->template->assign_vars(array(
 			'FAVICON_EXT'	=> $this->config['favicon_ext'],

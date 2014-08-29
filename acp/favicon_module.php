@@ -22,29 +22,29 @@ class favicon_module
 
 		$this->page_title = 'ACP_FAVICON';
 		$this->tpl_name = 'acp_favicon';
-		
+
 		$submit = (isset($_POST['submit'])) ? true : false;
 		$form_key = 'config_favicon';
 		add_form_key($form_key);
-		
+
 		$display_vars = array(
 			'title'	=> 'ACP_FAVICON',
 			'vars'	=> array(
 				'legend1'		=> '',
 				'favicon_ext'		=> array('lang' => 'ACP_FAVICON_EXT', 'validate' => 'string', 'type' => 'select', 'method' => 'favicon_select', 'explain' => true),
 				'favicon_apple'		=> array('lang' => 'ACP_FAVICON_APPLE', 'validate' => 'bool', 'type' => 'radio:yes_no', 'method' => false, 'explain' => true),
-				
+
 				'legend2'					=> 'ACP_SUBMIT_CHANGES',
 			),
 		);
-						
+
 		if (isset($display_vars['lang']))
 		{
 			$user->add_lang($display_vars['lang']);
 		}
 
 		$this->new_config = $config;
-		$cfg_array = (isset($_REQUEST['config'])) ? utf8_normalize_nfc(request_var('config', array('' => ''), true)) : $this->new_config;
+		$cfg_array = (isset($_REQUEST['config'])) ? utf8_normalize_nfc($request->variable('config', array('' => ''), true)) : $this->new_config;
 		$error = array();
 
 		// We validate the complete config if wished
@@ -59,7 +59,7 @@ class favicon_module
 		{
 			$submit = false;
 		}
-		
+
 		// We go through the display_vars to make sure no one is trying to set variables he/she is not allowed to...
 		foreach ($display_vars['vars'] as $config_name => $null)
 		{
@@ -72,17 +72,17 @@ class favicon_module
 
 			if ($submit)
 			{
-				set_config($config_name, $config_value);
+				$config->set($config_name, $config_value);
 			}
 		}
-		
+
 		if ($submit)
 		{
 			trigger_error($user->lang['CONFIG_UPDATED'] . adm_back_link($this->u_action));
 		}
-		
+
 		$this->page_title = $display_vars['title'];
-		
+
 		$template->assign_vars(array(
 			'L_TITLE'			=> $user->lang[$display_vars['title']],
 			'L_TITLE_EXPLAIN'	=> $user->lang[$display_vars['title'] . '_EXPLAIN'],
@@ -90,7 +90,7 @@ class favicon_module
 			'S_ERROR'			=> (sizeof($error)) ? true : false,
 			'ERROR_MSG'			=> implode('<br />', $error),
 		));
-		
+
 		// Output relevant page
 		foreach ($display_vars['vars'] as $config_key => $vars)
 		{
@@ -140,11 +140,11 @@ class favicon_module
 			unset($display_vars['vars'][$config_key]);
 		}
 	}
-	
+
 	function favicon_select()
 	{
 		global $config, $user, $phpbb_root_path;
-		
+
 		$fav_flag = true;
 		$favicon_options = '';
 		if(file_exists($phpbb_root_path . 'ext/tatiana5/favicon/favicon.ico'))
@@ -159,14 +159,12 @@ class favicon_module
 			$favicon_options .= '<option value="png"' . $selected . '>png</option>';
 			$fav_flag = false;
 		}
-		
+
 		if($fav_flag)
 		{
 			$favicon_options .= '<option val="">' . $user->lang['ACP_FAVICON_NOT_FOUND'] . '</option>';
 		}
-		
+
 		return $favicon_options;
 	}
 }
-
-?>

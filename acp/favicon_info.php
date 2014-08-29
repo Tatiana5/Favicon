@@ -23,5 +23,3 @@ class favicon_info
 		);
 	}
 }
-
-?>
