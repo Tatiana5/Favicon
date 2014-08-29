@@ -9,7 +9,7 @@
 
 namespace tatiana5\favicon\migrations\v0xx;
 
-class favicon_v_0_0_3 extends \phpbb\db\migration\migration
+class v_0_0_3 extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
