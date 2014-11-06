@@ -21,18 +21,6 @@ class v_0_0_2 extends \phpbb\db\migration\migration
 			return array('\phpbb\db\migration\data\v310\dev');
 	}
 
-	public function update_schema()
-	{
-		return array(
-		);
-	}
-
-	public function revert_schema()
-	{
-		return array(
-		);
-	}
-
 	public function update_data()
 	{
 		return array(

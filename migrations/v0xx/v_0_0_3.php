@@ -18,19 +18,7 @@ class v_0_0_3 extends \phpbb\db\migration\migration
 
 	static public function depends_on()
 	{
-		return array('\tatiana5\favicon\migrations\v0xx\favicon_v_0_0_2');
-	}
-
-	public function update_schema()
-	{
-		return array(
-		);
-	}
-
-	public function revert_schema()
-	{
-		return array(
-		);
+		return array('\tatiana5\favicon\migrations\v0xx\v_0_0_2');
 	}
 
 	public function update_data()
