@@ -25,7 +25,7 @@ class listener implements EventSubscriberInterface
 
 	/**
 	* Constructor
-	* 
+	*
 	* @param \phpbb\config\config $config
 	* @param \phpbb\template\template $template
 	*/

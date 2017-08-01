@@ -152,20 +152,20 @@ class favicon_module
 
 		$fav_flag = true;
 		$favicon_options = '';
-		if(file_exists($phpbb_root_path . 'ext/tatiana5/favicon/favicon.ico'))
+		if (file_exists($phpbb_root_path . 'ext/tatiana5/favicon/favicon.ico'))
 		{
 			$selected = ($config['favicon_ext'] == 'ico') ? ' selected="selected"' : '';
 			$favicon_options .= '<option value="ico"' . $selected . '>ico</option>';
 			$fav_flag = false;
 		}
-		if(file_exists($phpbb_root_path . 'ext/tatiana5/favicon/favicon.png'))
+		if (file_exists($phpbb_root_path . 'ext/tatiana5/favicon/favicon.png'))
 		{
 			$selected = ($config['favicon_ext'] == 'png') ? ' selected="selected"' : '';
 			$favicon_options .= '<option value="png"' . $selected . '>png</option>';
 			$fav_flag = false;
 		}
 
-		if($fav_flag)
+		if ($fav_flag)
 		{
 			$favicon_options .= '<option val="">' . $user->lang['ACP_FAVICON_NOT_FOUND'] . '</option>';
 		}
