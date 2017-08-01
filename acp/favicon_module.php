@@ -33,6 +33,7 @@ class favicon_module
 				'legend1'		=> '',
 				'favicon_ext'		=> array('lang' => 'ACP_FAVICON_EXT', 'validate' => 'string', 'type' => 'select', 'method' => 'favicon_select', 'explain' => true),
 				'favicon_apple'		=> array('lang' => 'ACP_FAVICON_APPLE', 'validate' => 'bool', 'type' => 'radio:yes_no', 'method' => false, 'explain' => true),
+				'favicon_bubble'	=> array('lang' => 'ACP_FAVICON_BUBBLE', 'validate' => 'bool', 'type' => 'radio:yes_no', 'method' => false, 'explain' => false),
 
 				'legend2'					=> 'ACP_SUBMIT_CHANGES',
 			),
@@ -43,7 +44,11 @@ class favicon_module
 			$user->add_lang($display_vars['lang']);
 		}
 
-		$this->new_config = $config;
+		foreach ($config as $key => $value)
+		{
+			$this->new_config[$key] = $value;
+		}
+
 		$cfg_array = (isset($_REQUEST['config'])) ? utf8_normalize_nfc($request->variable('config', array('' => ''), true)) : $this->new_config;
 		$error = array();
 

@@ -30,6 +30,7 @@ $lang = array_merge($lang, array(
 	'ACP_FAVICON_EXT_EXPLAIN'	=> '<strong>favicon.ico</strong> or <strong>favicon.png</strong>',
 	'ACP_FAVICON_APPLE'			=> 'Enable favicon for apple',
 	'ACP_FAVICON_APPLE_EXPLAIN'	=> '<strong>apple_touch_icon.png</strong>',
+	'ACP_FAVICON_BUBBLE'		=> 'Dispay bubble with notification count on the favicon',
 
 	'ACP_FAVICON_NOT_FOUND'		=> 'Favicon not found',
 ));

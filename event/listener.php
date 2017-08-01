@@ -51,8 +51,14 @@ class listener implements EventSubscriberInterface
 	public function favicon()
 	{
 		$this->template->assign_vars(array(
-			'FAVICON_EXT'	=> $this->config['favicon_ext'],
-			'FAVICON_APPLE'	=> $this->config['favicon_apple'],
+			'FAVICON_EXT'		=> $this->config['favicon_ext'],
+			'FAVICON_APPLE'		=> $this->config['favicon_apple'],
+			'FAVICON_BUBBLE'	=> $this->config['favicon_bubble'],
 		));
+
+		if ($this->config['favicon_bubble'])
+		{
+			$this->template->assign_var('UNREAD_NOTIFICATIONS_COUNT', '');
+		}
 	}
 }
