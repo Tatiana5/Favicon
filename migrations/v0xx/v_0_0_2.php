@@ -36,7 +36,7 @@ class v_0_0_2 extends \phpbb\db\migration\migration
 					'module_basename'	=> '\tatiana5\favicon\acp\favicon_module',
 					'module_langname'	=> 'ACP_FAVICON_EXPLAIN',
 					'module_mode'		=> 'config_favicon',
-					'module_auth'		=> 'acl_a_',
+					'module_auth'		=> 'ext_tatiana5/favicon && acl_a_',
 			))),
 		);
 	}
