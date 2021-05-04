@@ -19,10 +19,10 @@ if (!defined('IN_PHPBB'))
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+	$lang = [];
 }
 
-$lang = array_merge($lang, array(
+$lang = array_merge($lang, [
 	'ACP_FAVICON'				=> 'Favicon',
 	'ACP_FAVICON_EXPLAIN'		=> 'Иконка конференции',
 
@@ -33,4 +33,4 @@ $lang = array_merge($lang, array(
 	'ACP_FAVICON_BUBBLE'		=> 'Отображать счётчик уведомлений на фавиконе',
 
 	'ACP_FAVICON_NOT_FOUND'		=> 'Favicon не найден',
-));
+]);

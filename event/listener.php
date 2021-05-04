@@ -43,18 +43,19 @@ class listener implements EventSubscriberInterface
 	*/
 	static public function getSubscribedEvents()
 	{
-		return array(
-			'core.page_header_after'	=> 'favicon',
-		);
+		return [
+			'core.page_header_after'		=> 'favicon',
+			'core.adm_page_header'			=> 'favicon',
+		];
 	}
 
 	public function favicon()
 	{
-		$this->template->assign_vars(array(
+		$this->template->assign_vars([
 			'FAVICON_EXT'		=> $this->config['favicon_ext'],
 			'FAVICON_APPLE'		=> $this->config['favicon_apple'],
 			'FAVICON_BUBBLE'	=> $this->config['favicon_bubble'],
-		));
+		]);
 
 		if ($this->config['favicon_bubble'])
 		{

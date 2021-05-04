@@ -13,13 +13,13 @@ class favicon_info
 {
 	function module()
 	{
-		return array(
+		return [
 			'filename'	=> '\tatiana5\favicon\acp\favicon_module',
 			'title'		=> 'ACP_QUICKREPLY',
 			'version'	=> '0.0.2',
-			'modes'		=> array(
-				'config_favicon'		=> array('title' => 'ACP_FAVICON_CONFIG', 'auth' => 'acl_a_', 'cat' => array('ACP_FAVICON_CONFIG')),
-			),
-		);
+			'modes'		=> [
+				'config_favicon'		=> ['title' => 'ACP_FAVICON_CONFIG', 'auth' => 'acl_a_', 'cat' => ['ACP_FAVICON_CONFIG']],
+			],
+		];
 	}
 }

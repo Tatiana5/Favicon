@@ -18,26 +18,26 @@ class v_0_0_2 extends \phpbb\db\migration\migration
 
 	static public function depends_on()
 	{
-			return array('\phpbb\db\migration\data\v310\dev');
+			return ['\phpbb\db\migration\data\v310\dev'];
 	}
 
 	public function update_data()
 	{
-		return array(
+		return [
 			// Add configs
-			array('config.add', array('favicon_ext', 'ico')),
+			['config.add', ['favicon_ext', 'ico']],
 
 			// Current version
-			array('config.add', array('favicon_version', '0.0.2')),
+			['config.add', ['favicon_version', '0.0.2']],
 
 			// Add ACP modules
-			array('module.add', array('acp', 'ACP_CAT_DOT_MODS', 'ACP_FAVICON')),
-			array('module.add', array('acp', 'ACP_FAVICON', array(
+			['module.add', ['acp', 'ACP_CAT_DOT_MODS', 'ACP_FAVICON']],
+			['module.add', ['acp', 'ACP_FAVICON', [
 					'module_basename'	=> '\tatiana5\favicon\acp\favicon_module',
 					'module_langname'	=> 'ACP_FAVICON_EXPLAIN',
 					'module_mode'		=> 'config_favicon',
 					'module_auth'		=> 'ext_tatiana5/favicon && acl_a_',
-			))),
-		);
+			]]],
+		];
 	}
 }

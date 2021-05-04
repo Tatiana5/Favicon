@@ -1,9 +1,9 @@
-<!-- IF FAVICON_EXT == 'ico' -->
-	<link rel="shortcut icon" href="{BOARD_URL}ext/tatiana5/favicon/favicon.ico" />
-<!-- ELSEIF FAVICON_EXT == 'png' -->
-	<link rel="shortcut icon" type="image/png" href="{BOARD_URL}ext/tatiana5/favicon/favicon.png" />
-<!-- ENDIF -->
+{% if FAVICON_EXT == 'ico' %}
+	<link rel="shortcut icon" href="{{ BOARD_URL }}ext/tatiana5/favicon/favicon.ico" />
+{% elseif FAVICON_EXT == 'png' %}
+	<link rel="shortcut icon" type="image/png" href="{{ BOARD_URL }}ext/tatiana5/favicon/favicon.png" />
+{% endif %}
 	
-<!-- IF FAVICON_APPLE -->	
-	<link rel="apple-touch-icon" href="{BOARD_URL}ext/tatiana5/favicon/apple_touch_icon.png" />
-<!-- ENDIF -->
+{% if FAVICON_APPLE %}	
+	<link rel="apple-touch-icon" href="{{ BOARD_URL }}ext/tatiana5/favicon/apple_touch_icon.png" />
+{% endif %}
