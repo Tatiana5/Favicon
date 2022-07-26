@@ -2,7 +2,7 @@
 /**
 *
 * @package favicon
-* @copyright (c) 2013 Татьяна5
+* @copyright (c) 2014 - 2022 Татьяна5
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -53,7 +53,9 @@ class listener implements EventSubscriberInterface
 	{
 		$this->template->assign_vars([
 			'FAVICON_EXT'		=> $this->config['favicon_ext'],
+			'FAVICON_SVG'		=> $this->config['favicon_svg'],
 			'FAVICON_APPLE'		=> $this->config['favicon_apple'],
+			'FAVICON_ANDROID'	=> $this->config['favicon_android'],
 			'FAVICON_BUBBLE'	=> $this->config['favicon_bubble'],
 		]);
 

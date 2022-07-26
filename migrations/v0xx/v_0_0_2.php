@@ -2,7 +2,7 @@
 /**
 *
 * @package favicon
-* @copyright (c) 2014 Татьяна5
+* @copyright (c) 2014 - 2022 Татьяна5
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
 */
